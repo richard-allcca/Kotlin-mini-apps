@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.thouma.concepts.R
 import com.thouma.concepts.menu.firstApp.FirstScreenActivity
 import com.thouma.concepts.menu.bodycalculator.BodyCalculatorActivity
+import com.thouma.concepts.menu.superheoapp.SuperHeroListActivity
 import com.thouma.concepts.menu.todoApp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -26,25 +27,31 @@ class MenuActivity : AppCompatActivity() {
         val firstBtn = findViewById<Button>(R.id.firstBtn)
         val secondBtn = findViewById<Button>(R.id.calculator)
         val thirdBtn = findViewById<Button>(R.id.todo)
-
-        fun navigateToFirstScreen() {
-            val intent = Intent(this, FirstScreenActivity::class.java)
-            startActivity(intent)
-        }
-
-        fun navigateToBodyCalculator() {
-            val intent = Intent(this, BodyCalculatorActivity::class.java)
-            startActivity(intent)
-        }
-
-        fun navigateToTodo() {
-            val intent = Intent(this, TodoActivity::class.java)
-            startActivity(intent)
-        }
+        val fourthBtn = findViewById<Button>(R.id.superHero)
 
         firstBtn.setOnClickListener { navigateToFirstScreen() }
         secondBtn.setOnClickListener { navigateToBodyCalculator() }
         thirdBtn.setOnClickListener { navigateToTodo() }
+        fourthBtn.setOnClickListener { navigateToSuperHeroList() }
+    }
 
+    fun navigateToFirstScreen() {
+        val intent = Intent(this, FirstScreenActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToBodyCalculator() {
+        val intent = Intent(this, BodyCalculatorActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToTodo() {
+        val intent = Intent(this, TodoActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToSuperHeroList() {
+        val intent = Intent(this, SuperHeroListActivity::class.java)
+        startActivity(intent)
     }
 }
